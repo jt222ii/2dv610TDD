@@ -11,7 +11,7 @@ public class BlackJackGame {
 
     public static void main(String[] args)
     {
-        BlackJackGame game = new BlackJackGame(new ConsoleView());
+        BlackJackGame game = new BlackJackGame(new ConsoleView(System.out));
 
         game.run();
     }

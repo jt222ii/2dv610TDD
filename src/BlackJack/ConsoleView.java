@@ -12,10 +12,6 @@ public class ConsoleView {
         this.out = output;
     }
 
-    public ConsoleView() { //this should be removed. But for some reason the tests wont run if there are errors
-
-    }
-
     public void showMenu() {
         out.println(MENU);
     }
