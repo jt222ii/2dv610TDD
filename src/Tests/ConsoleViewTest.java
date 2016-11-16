@@ -15,24 +15,18 @@ import static org.mockito.Mockito.*;
 public class ConsoleViewTest {
 
     private ConsoleView sut;
+    private PrintStream printStream;
 
     @Before
     public void setUp() throws Exception {
-
+        printStream = mock(PrintStream.class);
+        sut = new ConsoleView(printStream);
     }
 
     @Test
     public void shouldShowMenu() throws Exception {
-
-        PrintStream printStream = mock(PrintStream.class);
-
-        sut = new ConsoleView(printStream);
-
         sut.showMenu();
-
         verify(printStream).println(ConsoleView.MENU);
-
-
     }
 
 }

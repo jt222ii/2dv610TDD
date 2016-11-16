@@ -13,18 +13,16 @@ import static org.mockito.Mockito.*;
  */
 public class BlackJackGameTest {
     private BlackJackGame sut;
+    ConsoleView view;
     @Before
     public void setUp() throws Exception {
-
+        view = mock(ConsoleView.class);
+        sut = new BlackJackGame(view);
     }
     @Test
     public void shouldShowMenu() {
-        ConsoleView view = mock(ConsoleView.class);
-        sut = new BlackJackGame(view);
         sut.run();
-
         verify(view).showMenu();
-
     }
 
 }
